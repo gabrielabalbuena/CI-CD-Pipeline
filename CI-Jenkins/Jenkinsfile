@@ -62,11 +62,11 @@ pipeline {
             }
         }
 
-        // stage('Trigger CD Pipeline'){
-        //     steps{
-        //         build job: 'CD-Pipeline-SpringBoot', wait: true
-        //     }
-        // }
+        stage('Trigger CD Pipeline'){
+            steps{
+                build job: 'CD-Pipeline-SpringBoot', wait: true
+            }
+        }
 
     }
 }
