@@ -42,5 +42,11 @@ pipeline {
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
+
+        stage('Build Application'){
+            steps{
+                sh "mvn clean install -DskipTests=true"
+            }
+        }
     }
 }
