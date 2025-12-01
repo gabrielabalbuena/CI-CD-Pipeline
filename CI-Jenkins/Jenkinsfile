@@ -51,7 +51,7 @@ pipeline {
 
         stage('Build & Push Docker Image'){
             steps{
-                withDockerRegistry(credentialsId: 'c9f8cfae-4d4f-4c24-8b01-105751d317af', toolName: 'docker') {
+                withDockerRegistry(credentialsId: 'c9f8cfae-4d4f-4c24-8b01-105751d317af') {
                     sh "docker build -t sp-hello-world:latest -f docker/Dockerfile ."
                     sh "docker tag sp-hello-world:latest gbalbuena25/sp-hello-world:latest"
                     sh "docker push gbalbuena25/sp-hello-world:latest"
