@@ -8,4 +8,4 @@ COPY target/SpringBootMavenExample-1.3.5.RELEASE.war $APP_HOME/app.war
 
 WORKDIR $APP_HOME
 
-ENTRYPOINT exec java -jar app.war
+ENTRYPOINT exec java -war app.war
