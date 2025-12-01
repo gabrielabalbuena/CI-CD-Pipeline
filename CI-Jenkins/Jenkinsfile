@@ -51,9 +51,11 @@ pipeline {
 
         stage('Build & Push Docker Image'){
             steps{
-                docker.withRegistry('', 'c9f8cfae-4d4f-4c24-8b01-105751d317af') {
-                    def img = docker.build("sp-hello-world:latest", "-f docker/Dockerfile .")
-                    img.push()
+                script {
+                    docker.withRegistry('', 'c9f8cfae-4d4f-4c24-8b01-105751d317af') {
+                        def img = docker.build("sp-hello-world:latest", "-f docker/Dockerfile .")
+                        img.push()
+                    }
                 }
             }
         }
