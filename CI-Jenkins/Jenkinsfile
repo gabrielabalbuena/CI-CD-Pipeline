@@ -23,17 +23,17 @@ pipeline {
             }
         }
 
-        // stage('Sonarqube Analysis'){
-        //     steps{
-        //         sh ''' 
-        //         $SCANNER_HOME/bin/sonar-scanner \
-        //         -Dsonar.url=http://sonarqube:9000/ \
-        //         -Dsonar.login=squ_760725565e26189d33b4ea1c035cc963556a5b35 \
-        //         -Dsonar.projectName=Ekart \
-        //         -Dsonar.java.binaries=. \
-        //         -Dsonar.projectKey=Ekart 
-        //         '''
-        //     }
-        // }
+        stage('Sonarqube Analysis'){
+            steps{
+                sh ''' 
+                $SCANNER_HOME/bin/sonar-scanner \
+                -Dsonar.url=http://sonarqube:9000/ \
+                -Dsonar.login=squ_760725565e26189d33b4ea1c035cc963556a5b35 \
+                -Dsonar.projectName=SpringBootHelloWorld \
+                -Dsonar.java.binaries=. \
+                -Dsonar.projectKey=SpringBootHelloWorld 
+                '''
+            }
+        }
     }
 }
