@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Docker Deploy To Container'){
+            steps{
+                script{
+                    withDockerRegistry(url: 'https://index.docker.io/v1/', credentialsId: 'c9f8cfae-4d4f-4c24-8b01-105751d317af') {
+                    sh "docker build -t sp-hello-world:latest -f docker/Dockerfile ."
+                    sh "docker tag sp-hello-world:latest gbalbuena25/sp-hello-world:latest"
+                    sh "docker push gbalbuena25/sp-hello-world:latest"
+                }
+                }
+            }
+        }
+    }
+}
