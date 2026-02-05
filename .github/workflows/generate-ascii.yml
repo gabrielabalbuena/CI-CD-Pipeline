@@ -10,7 +10,7 @@ jobs:
               run: sudo apt-get install cowsay -y
             
             - name: Execute Cowsay CMD
-              run: cowsay -f kitty "Hello world" >> cowsay.txt
+              run: cowsay -f dragon "Hello world" >> cowsay.txt
 
             - name: Sleep for 30 seconds
               run: sleep 30
