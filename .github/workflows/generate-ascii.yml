@@ -10,7 +10,7 @@ jobs:
               run: sudo apt-get install cowsay -y
             
             - name: Execute Cowsay CMD
-              run: cowsay -f gnu "Hello world" >> cowsay.txt
+              run: cowsay -f gnu "Hello cowsay" >> cowsay.txt
 
             - name: Upload Cowsay text file
               uses: actions/upload-artifact@v4
