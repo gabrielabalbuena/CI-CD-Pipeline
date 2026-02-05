@@ -1,0 +1,25 @@
+name: workflow-manual
+
+on: 
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: "Entorno a desplegar"
+                required: true
+                type: choice
+                options:
+                    - dev
+                    - qa
+                    - prod
+
+            version:
+                description: "Version a desplegar"
+                required: true
+
+jobs:
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                echo "Deploy en: ${{inputs.environment}}"
+                echo "Version: ${{inputs.version}}"
