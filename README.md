@@ -1,5 +1,3 @@
-### randOMMMM
-
 # Spring Boot Maven Example Hello World
 
 Guide
